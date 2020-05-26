@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NotelyApp.Repository;
 
 namespace NotelyApp
 {
@@ -32,6 +33,7 @@ namespace NotelyApp
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSingleton<INoteRepository, NoteRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
